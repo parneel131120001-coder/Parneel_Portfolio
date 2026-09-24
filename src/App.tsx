@@ -570,12 +570,23 @@ function App() {
               <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
                 💼 <strong>LinkedIn:</strong>{' '}
                 <a
-                  href={personal_info.linkedin}
+                  href={personal_info.linkedin.startsWith('http') ? personal_info.linkedin : `https://${personal_info.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
                   style={{ color: 'var(--emerald-400)', textDecoration: 'underline' }}
                 >
                   Connect on LinkedIn ↗
+                </a>
+              </div>
+              <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
+                💻 <strong>GitHub:</strong>{' '}
+                <a
+                  href={personal_info.github.startsWith('http') ? personal_info.github : `https://${personal_info.github}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={{ color: 'var(--emerald-400)', textDecoration: 'underline' }}
+                >
+                  GitHub Profile ↗
                 </a>
               </div>
             </div>
