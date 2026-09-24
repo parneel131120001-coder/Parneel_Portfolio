@@ -578,17 +578,6 @@ function App() {
                   Connect on LinkedIn ↗
                 </a>
               </div>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
-                💻 <strong>GitHub:</strong>{' '}
-                <a
-                  href={personal_info.github.startsWith('http') ? personal_info.github : `https://${personal_info.github}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{ color: 'var(--emerald-400)', textDecoration: 'underline' }}
-                >
-                  GitHub Profile ↗
-                </a>
-              </div>
             </div>
           </div>
         </div>
