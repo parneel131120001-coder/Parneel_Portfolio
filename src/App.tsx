@@ -568,14 +568,14 @@ function App() {
                 🎓 <strong>Degrees:</strong> BSc (Tokyo NODAI), MSc Candidate (Tokyo NODAI & WUR Exchange)
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
-                💼 <strong>LinkedIn:</strong>{' '}
+                💼{' '}
                 <a
                   href={personal_info.linkedin.startsWith('http') ? personal_info.linkedin : `https://${personal_info.linkedin}`}
                   target="_blank"
                   rel="noreferrer"
-                  style={{ color: 'var(--emerald-400)', textDecoration: 'underline' }}
+                  style={{ color: 'var(--emerald-400)', textDecoration: 'underline', fontWeight: 600 }}
                 >
-                  Connect on LinkedIn ↗
+                  LinkedIn ↗
                 </a>
               </div>
             </div>
