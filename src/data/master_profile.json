@@ -21,7 +21,7 @@
         "location": "Wageningen, Netherlands"
       }
     ],
-    "linkedin": "https://www.linkedin.com/in/parneel-saharan/",
+    "linkedin": "www.linkedin.com/in/parneel-saharan-268179250",
     "github": "https://github.com/parneel131120001-coder"
   },
   "education": [
@@ -109,7 +109,13 @@
       "type": "Peer-Reviewed Article",
       "doi": "https://doi.org/10.3390/plants14111683",
       "description": "Evaluated seed priming protocols on iron-coated aged rice seeds to boost germination rate, uniform seedling emergence, and early vigor tailored for sustainable direct sowing agricultural systems.",
-      "tags": ["Seed Priming", "Rice (Oryza sativa)", "Direct Sowing", "Seed Physiology", "Iron Coating"],
+      "tags": [
+        "Seed Priming",
+        "Rice (Oryza sativa)",
+        "Direct Sowing",
+        "Seed Physiology",
+        "Iron Coating"
+      ],
       "citation": "Habibi, N., Parneel, Terada, N., Pachakkil, B. et al. (2025). Effect of priming treatment on improving germination and seedling performance of aged and iron-coated rice seeds aiming for direct sowing. Plants, 14, 1683."
     },
     {
@@ -121,7 +127,13 @@
       "type": "Peer-Reviewed Article",
       "doi": "https://doi.org/10.1007/s13580-024-00651-1",
       "description": "Demonstrated that specific physiological seed priming treatments significantly restore root apical growth, cellular vitality, and seedling vigor in Solanum lycopersicum under acute saline conditions.",
-      "tags": ["Tomato (Solanum lycopersicum)", "Salt Stress", "Seed Priming", "Root Vitality", "Stress Physiology"],
+      "tags": [
+        "Tomato (Solanum lycopersicum)",
+        "Salt Stress",
+        "Seed Priming",
+        "Root Vitality",
+        "Stress Physiology"
+      ],
       "citation": "Habibi, N., Tayobong, R.R.P., Parneel et al. (2024). Novel insights into seed priming for tomato plants: restoring root vitality under salt stress. Horticulture, Environment and Biotechnology."
     },
     {
@@ -136,7 +148,12 @@
       "type": "Review & Perspective",
       "doi": "",
       "description": "Explored the emerging integration of computer vision, remote sensing, and predictive modeling in greenhouse climate management, phenotyping, and precision resource allocation.",
-      "tags": ["Artificial Intelligence", "Smart Horticulture", "Sustainable Agriculture", "Precision Farming"],
+      "tags": [
+        "Artificial Intelligence",
+        "Smart Horticulture",
+        "Sustainable Agriculture",
+        "Precision Farming"
+      ],
       "citation": "Parneel (2025). Artificial Intelligence in Horticulture for Sustainable Agriculture. Agriculture and Food e-Newsletter, 7(2), 259–261."
     }
   ],
@@ -148,7 +165,12 @@
       "category": "Field Research & Sustainability",
       "location": "Lingehof Organic Farm, Netherlands",
       "description": "Investigated diversified cover-crop rotations and regenerative agricultural strategies at Lingehof Organic Farm to enhance soil organic matter, microbial resilience, and drought/excess-rainfall tolerance. Synthesized quantitative ecological data and presented findings in a multidisciplinary symposium poster.",
-      "skills_used": ["Cover-crop ecology", "Soil health metrics", "Multidisciplinary collaboration", "Scientific poster design"]
+      "skills_used": [
+        "Cover-crop ecology",
+        "Soil health metrics",
+        "Multidisciplinary collaboration",
+        "Scientific poster design"
+      ]
     },
     {
       "title": "Teaching Assistant - Laboratory of Tropical Horticultural Science",
@@ -157,7 +179,12 @@
       "category": "Academic Teaching & Lab Leadership",
       "location": "Tokyo, Japan",
       "description": "Guided undergraduate students through practical experimental sessions in plant physiology and horticultural techniques. Supervised instrument safety, reagent preparation, analytical spectroscopy, and mentored students on data integrity and experimental design.",
-      "skills_used": ["Laboratory instruction", "Analytical spectroscopy", "Mentorship", "Lab safety management"]
+      "skills_used": [
+        "Laboratory instruction",
+        "Analytical spectroscopy",
+        "Mentorship",
+        "Lab safety management"
+      ]
     },
     {
       "title": "Precision Agriculture, Crop Modeling & Remote Sensing",
@@ -166,7 +193,12 @@
       "category": "International Fellowship",
       "location": "Taipei, Taiwan",
       "description": "Completed an intensive two-week international cohort program focusing on precision farming architectures, remote multispectral sensing, crop growth simulation modeling, and digital agricultural transformation with global researchers.",
-      "skills_used": ["Precision agriculture", "Crop simulation modeling", "Multispectral remote sensing", "International teamwork"]
+      "skills_used": [
+        "Precision agriculture",
+        "Crop simulation modeling",
+        "Multispectral remote sensing",
+        "International teamwork"
+      ]
     },
     {
       "title": "Subtropical Horticultural Field Training",
@@ -175,7 +207,12 @@
       "category": "Field Research & Sustainability",
       "location": "Miyakojima, Okinawa, Japan",
       "description": "Executed hands-on crop production and physiological monitoring on subtropical cultivars including coffee and yams. Conducted mechanized field management, soil moisture monitoring, and practical field harvest data collection under island climatic conditions.",
-      "skills_used": ["Coffee & yam management", "Field mechanization", "Microclimatic monitoring", "Agronomic trials"]
+      "skills_used": [
+        "Coffee & yam management",
+        "Field mechanization",
+        "Microclimatic monitoring",
+        "Agronomic trials"
+      ]
     },
     {
       "title": "Chairperson & Delegate - 20th International Student Summit (ISS)",
@@ -184,7 +221,12 @@
       "category": "Academic Teaching & Lab Leadership",
       "location": "Tokyo, Japan",
       "description": "Elected as Chairperson to represent Tokyo University of Agriculture at the 20th International Student Summit on Food, Agriculture and Environment. Moderated international plenary sessions and synthesized multilateral consensus on youth-driven food security.",
-      "skills_used": ["Plenary moderation", "International diplomacy", "Public speaking", "Consensus building"]
+      "skills_used": [
+        "Plenary moderation",
+        "International diplomacy",
+        "Public speaking",
+        "Consensus building"
+      ]
     }
   ],
   "academic_achievements": [
@@ -278,22 +320,32 @@
     {
       "name": "English",
       "level": "Fluent / Academic Working Proficiency",
-      "badges": ["PTE: 78/90 (2023)", "IELTS Academic: 7.0 Band (Dec 2024)"]
+      "badges": [
+        "PTE: 78/90 (2023)",
+        "IELTS Academic: 7.0 Band (Dec 2024)"
+      ]
     },
     {
       "name": "Japanese",
       "level": "Fluent / Professional & Daily Communication",
-      "badges": ["5+ years residence in Tokyo", "TA Instruction & Retail Experience"]
+      "badges": [
+        "5+ years residence in Tokyo",
+        "TA Instruction & Retail Experience"
+      ]
     },
     {
       "name": "Hindi",
       "level": "Native / Bilingual",
-      "badges": ["Native Proficiency"]
+      "badges": [
+        "Native Proficiency"
+      ]
     },
     {
       "name": "Haryanvi",
       "level": "Native",
-      "badges": ["Mother Tongue"]
+      "badges": [
+        "Mother Tongue"
+      ]
     }
   ],
   "other_experience": [
