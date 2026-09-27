@@ -1,8 +1,26 @@
 import { useState, useEffect } from 'react'
-import profileData from './data/master_profile.json'
+import profileDataEn from './data/master_profile.json'
+import profileDataJa from './data/master_profile_ja.json'
+import { uiTranslations } from './data/translations'
 import './index.css'
 
 function App() {
+  const [lang, setLang] = useState<'en' | 'ja'>(() => {
+    try {
+      const saved = localStorage.getItem('portfolio_lang');
+      if (saved === 'en' || saved === 'ja') return saved;
+      if (typeof navigator !== 'undefined' && navigator.language?.toLowerCase().startsWith('ja')) {
+        return 'ja';
+      }
+    } catch {
+      // ignore
+    }
+    return 'en';
+  });
+
+  const profileData = lang === 'ja' ? profileDataJa : profileDataEn;
+  const ui = uiTranslations[lang];
+
   const {
     personal_info,
     education,
@@ -14,12 +32,17 @@ function App() {
     other_experience
   } = profileData;
 
-  const [activeTab, setActiveTab] = useState<string>('All');
+  const [activeCategoryKey, setActiveCategoryKey] = useState<string>('all');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    document.title = `${personal_info.full_name} | MSc Plant Sciences & Horticulture Portfolio`;
-  }, [personal_info]);
+    document.documentElement.lang = lang;
+    if (lang === 'ja') {
+      document.title = `${personal_info.display_name}（Parneel Saharan）| 東京農業大学大学院 植物科学・農学研究ポートフォリオ`;
+    } else {
+      document.title = `${personal_info.full_name} | MSc Plant Sciences & Horticulture Portfolio`;
+    }
+  }, [lang, personal_info]);
 
   const showToast = (msg: string) => {
     setToastMessage(msg);
@@ -28,10 +51,21 @@ function App() {
     }, 3000);
   };
 
+  const switchLanguage = (newLang: 'en' | 'ja') => {
+    if (newLang === lang) return;
+    setLang(newLang);
+    try {
+      localStorage.setItem('portfolio_lang', newLang);
+    } catch {
+      // ignore
+    }
+    showToast(uiTranslations[newLang].toasts.langSwitched);
+  };
+
   const copyToClipboard = (text: string, label: string) => {
     if (navigator.clipboard) {
       navigator.clipboard.writeText(text).then(() => {
-        showToast(`${label} copied to clipboard!`);
+        showToast(`${label} ${ui.toasts.copiedSuccess}`);
       }).catch(() => {
         showToast(`Copied: ${text}`);
       });
@@ -40,14 +74,32 @@ function App() {
     }
   };
 
-  const filterCategories = ['All', 'Field Research & Sustainability', 'Academic Teaching & Lab Leadership', 'International Fellowship'];
+  const filterCategories = [
+    { key: 'all', label: ui.research.allTab },
+    { key: 'field', label: ui.research.categoryMap['Field Research & Sustainability'] },
+    { key: 'teaching', label: ui.research.categoryMap['Academic Teaching & Lab Leadership'] },
+    { key: 'fellowship', label: ui.research.categoryMap['International Fellowship'] }
+  ];
 
-  const filteredResearch = activeTab === 'All'
+  const filteredResearch = activeCategoryKey === 'all'
     ? research_experience
-    : research_experience.filter(item => item.category === activeTab);
+    : research_experience.filter(item => item.category_key === activeCategoryKey);
 
   return (
     <>
+      {/* Global Ambient Botanical Background - Persists Across All Sections */}
+      <div className="global-bg-container" aria-hidden="true">
+        <img
+          src="/botanical-hero.jpg"
+          alt=""
+          className="global-bg-img"
+          onError={(e) => {
+            (e.target as HTMLElement).style.display = 'none';
+          }}
+        />
+        <div className="global-bg-overlay"></div>
+      </div>
+
       {/* Toast Notification */}
       {toastMessage && (
         <div className="toast-msg">
@@ -62,36 +114,46 @@ function App() {
           <span className="brand-dot"></span>
           <span>{personal_info.display_name}</span>
         </a>
-        <ul className="nav-links">
-          <li><a href="#about" className="nav-link">About</a></li>
-          <li><a href="#education" className="nav-link">Education</a></li>
-          <li><a href="#research" className="nav-link">Research</a></li>
-          <li><a href="#publications" className="nav-link">Publications</a></li>
-          <li><a href="#grants" className="nav-link">Grants</a></li>
-          <li><a href="#skills" className="nav-link">Expertise</a></li>
-          <li><a href="#contact" className="nav-cta">Contact</a></li>
-        </ul>
+
+        <div className="nav-right">
+          <ul className="nav-links">
+            <li><a href="#about" className="nav-link">{ui.nav.about}</a></li>
+            <li><a href="#education" className="nav-link">{ui.nav.education}</a></li>
+            <li><a href="#research" className="nav-link">{ui.nav.research}</a></li>
+            <li><a href="#publications" className="nav-link">{ui.nav.publications}</a></li>
+            <li><a href="#grants" className="nav-link">{ui.nav.grants}</a></li>
+            <li><a href="#skills" className="nav-link">{ui.nav.skills}</a></li>
+            <li><a href="#contact" className="nav-cta">{ui.nav.contact}</a></li>
+          </ul>
+
+          {/* Language Switcher */}
+          <div className="lang-switcher" role="group" aria-label="Language selection">
+            <button
+              type="button"
+              className={`lang-btn ${lang === 'en' ? 'active' : ''}`}
+              onClick={() => switchLanguage('en')}
+              title="Switch to English"
+            >
+              <span className="lang-flag">🇬🇧</span> EN
+            </button>
+            <button
+              type="button"
+              className={`lang-btn ${lang === 'ja' ? 'active' : ''}`}
+              onClick={() => switchLanguage('ja')}
+              title="日本語に切り替え"
+            >
+              <span className="lang-flag">🇯🇵</span> 日本語
+            </button>
+          </div>
+        </div>
       </nav>
 
       {/* Hero Section */}
       <section className="hero" id="home">
-        <div className="hero-bg-container">
-          <img
-            src="/botanical-hero.jpg"
-            alt="Botanical Plant Sciences Background"
-            className="hero-bg-img"
-            onError={(e) => {
-              // fallback if image takes time to load
-              (e.target as HTMLElement).style.display = 'none';
-            }}
-          />
-          <div className="hero-overlay-gradient"></div>
-        </div>
-
         <div className="hero-content">
           <div className="hero-status-pill">
             <span className="status-pulse"></span>
-            <span>Plant Physiology & Sustainable Horticulture Researcher</span>
+            <span>{ui.hero.rolePill}</span>
           </div>
 
           <h1 className="hero-title">{personal_info.full_name}</h1>
@@ -102,7 +164,13 @@ function App() {
           <div className="hero-affiliations">
             {personal_info.current_institutions.map((inst, idx) => (
               <div className="affiliation-badge" key={idx}>
-                <span>🌱</span>
+                {inst.logo ? (
+                  <span className="inst-logo-badge">
+                    <img src={inst.logo} alt={inst.name} className="inst-logo-img" />
+                  </span>
+                ) : (
+                  <span>🌱</span>
+                )}
                 <span><strong>{inst.name}</strong> • {inst.role}</span>
               </div>
             ))}
@@ -110,36 +178,36 @@ function App() {
 
           <div className="hero-actions">
             <a href="#publications" className="btn-primary">
-              <span>View Publications</span>
+              <span>{ui.hero.btnPublications}</span>
               <span>↓</span>
             </a>
             <a href="#research" className="btn-secondary">
-              <span>Explore Research</span>
+              <span>{ui.hero.btnResearch}</span>
             </a>
             <a href="#contact" className="btn-secondary">
-              <span>Get In Touch</span>
+              <span>{ui.hero.btnContact}</span>
             </a>
           </div>
 
           <div className="hero-contact-strip">
             <span
               className="contact-pill"
-              onClick={() => copyToClipboard(personal_info.email, "Email")}
-              title="Click to copy email"
+              onClick={() => copyToClipboard(personal_info.email, ui.contact.primaryEmail)}
+              title={ui.hero.copyEmailTitle}
             >
               ✉ {personal_info.email}
             </span>
             <span
               className="contact-pill"
-              onClick={() => copyToClipboard(personal_info.phone_japan, "Phone (Japan)")}
-              title="Click to copy Japan phone"
+              onClick={() => copyToClipboard(personal_info.phone_japan, ui.contact.phoneJapan)}
+              title={ui.hero.copyJapanPhoneTitle}
             >
               🇯🇵 {personal_info.phone_japan}
             </span>
             <span
               className="contact-pill"
-              onClick={() => copyToClipboard(personal_info.phone_india, "Phone (India)")}
-              title="Click to copy India phone"
+              onClick={() => copyToClipboard(personal_info.phone_india, ui.contact.phoneIndia)}
+              title={ui.hero.copyIndiaPhoneTitle}
             >
               🇮🇳 {personal_info.phone_india}
             </span>
@@ -153,30 +221,30 @@ function App() {
       {/* About Summary Highlight */}
       <section className="section section-alt" id="about">
         <div className="section-header">
-          <span className="section-tag">Scientific Background</span>
-          <h2 className="section-title">Research Philosophy & Focus</h2>
+          <span className="section-tag">{ui.about.sectionTag}</span>
+          <h2 className="section-title">{ui.about.sectionTitle}</h2>
           <p className="section-desc">
-            Bridging fundamental plant photobiology with practical seed enhancement protocols to foster resilient crop production facing global climate challenges.
+            {ui.about.sectionDesc}
           </p>
         </div>
 
         <div className="education-grid">
           <div className="education-card">
-            <div className="edu-degree">🔬 Plant Physiology & Photoreceptors</div>
+            <div className="edu-degree">{ui.about.card1Title}</div>
             <p style={{ marginTop: '0.8rem', fontSize: '0.92rem', color: 'var(--text-sub)' }}>
-              Investigating the role of <strong>cryptochrome blue light photoreceptors</strong> in plant development, seed vigor, and morphology in <em>Arabidopsis thaliana</em> at Wageningen University & Research.
+              {ui.about.card1Desc}
             </p>
           </div>
           <div className="education-card">
-            <div className="edu-degree">🌾 Seed Priming & Direct Sowing</div>
+            <div className="edu-degree">{ui.about.card2Title}</div>
             <p style={{ marginTop: '0.8rem', fontSize: '0.92rem', color: 'var(--text-sub)' }}>
-              Co-authored peer-reviewed research on restoring root vitality in tomato crops under salt stress and optimizing iron-coated rice seed performance for sustainable direct sowing.
+              {ui.about.card2Desc}
             </p>
           </div>
           <div className="education-card">
-            <div className="edu-degree">🌍 Global Collaborative Fieldwork</div>
+            <div className="edu-degree">{ui.about.card3Title}</div>
             <p style={{ marginTop: '0.8rem', fontSize: '0.92rem', color: 'var(--text-sub)' }}>
-              Experienced across international research environments spanning <strong>Japan, India, Taiwan, and the Netherlands</strong>, combining rigorous laboratory analysis with practical agronomy.
+              {ui.about.card3Desc}
             </p>
           </div>
         </div>
@@ -185,10 +253,10 @@ function App() {
       {/* Education Section */}
       <section className="section" id="education">
         <div className="section-header">
-          <span className="section-tag">Academic Trajectory</span>
-          <h2 className="section-title">Education & Academic Training</h2>
+          <span className="section-tag">{ui.education.sectionTag}</span>
+          <h2 className="section-title">{ui.education.sectionTitle}</h2>
           <p className="section-desc">
-            Specialized training in international horticultural sciences, seed technology, and environmental plant biology across premier agricultural institutions.
+            {ui.education.sectionDesc}
           </p>
         </div>
 
@@ -198,21 +266,28 @@ function App() {
               <div className="education-header">
                 <div>
                   <h3 className="edu-degree">{edu.degree}</h3>
-                  <div className="edu-institution">{edu.institution}</div>
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>{edu.location}</div>
+                  <div className="edu-inst-row">
+                    {edu.logo && (
+                      <span className="inst-logo-badge edu-logo-badge">
+                        <img src={edu.logo} alt={edu.institution} className="inst-logo-img" />
+                      </span>
+                    )}
+                    <span className="edu-institution">{edu.institution}</span>
+                  </div>
+                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '0.2rem' }}>{edu.location}</div>
                 </div>
                 <span className="edu-period">{edu.start_date} – {edu.end_date}</span>
               </div>
 
               {edu.gpa && (
                 <div>
-                  <span className="edu-score-badge">★ Distinction: {edu.gpa}</span>
+                  <span className="edu-score-badge">{ui.education.distinctionLabel} {edu.gpa}</span>
                 </div>
               )}
 
               {edu.thesis && (
                 <div className="edu-thesis-box">
-                  <div className="edu-thesis-title">Master's Thesis: "{edu.thesis.title}"</div>
+                  <div className="edu-thesis-title">{ui.education.thesisPrefix} "{edu.thesis.title}"</div>
                   <div className="edu-thesis-desc">
                     <strong>{edu.thesis.lab}</strong> ({edu.thesis.period})<br />
                     {edu.thesis.description}
@@ -246,22 +321,22 @@ function App() {
       {/* Research & Academic Experience */}
       <section className="section section-alt" id="research">
         <div className="section-header">
-          <span className="section-tag">Hands-on Experience</span>
-          <h2 className="section-title">Research Projects & Academic Leadership</h2>
+          <span className="section-tag">{ui.research.sectionTag}</span>
+          <h2 className="section-title">{ui.research.sectionTitle}</h2>
           <p className="section-desc">
-            Applied agronomic investigations, precision crop modeling, laboratory teaching, and international agricultural leadership.
+            {ui.research.sectionDesc}
           </p>
         </div>
 
         {/* Filter Tabs */}
         <div className="filter-tabs">
-          {filterCategories.map((cat, idx) => (
+          {filterCategories.map((cat) => (
             <button
-              key={idx}
-              className={`filter-tab ${activeTab === cat ? 'active' : ''}`}
-              onClick={() => setActiveTab(cat)}
+              key={cat.key}
+              className={`filter-tab ${activeCategoryKey === cat.key ? 'active' : ''}`}
+              onClick={() => setActiveCategoryKey(cat.key)}
             >
-              {cat}
+              {cat.label}
             </button>
           ))}
         </div>
@@ -274,7 +349,14 @@ function App() {
                 <span className="research-period">{item.period}</span>
               </div>
               <h3 className="research-title">{item.title}</h3>
-              <div className="research-org">📍 {item.organization} • {item.location}</div>
+              <div className="research-org-line">
+                {item.logo && (
+                  <span className="inst-logo-badge research-logo-badge">
+                    <img src={item.logo} alt={item.organization} className="inst-logo-img" />
+                  </span>
+                )}
+                <span>📍 {item.organization} • {item.location}</span>
+              </div>
               <p className="research-desc">{item.description}</p>
               
               <div className="skills-pill-group">
@@ -290,10 +372,10 @@ function App() {
       {/* Publications Section */}
       <section className="section" id="publications">
         <div className="section-header">
-          <span className="section-tag">Scientific Output</span>
-          <h2 className="section-title">Peer-Reviewed Publications & Articles</h2>
+          <span className="section-tag">{ui.publications.sectionTag}</span>
+          <h2 className="section-title">{ui.publications.sectionTitle}</h2>
           <p className="section-desc">
-            Original research contributions in seed priming, abiotic stress resilience, and sustainable agricultural technologies.
+            {ui.publications.sectionDesc}
           </p>
         </div>
 
@@ -331,7 +413,7 @@ function App() {
               <div className="pub-actions">
                 {pub.doi && (
                   <a href={pub.doi} target="_blank" rel="noreferrer" className="btn-doi">
-                    <span>View Article (DOI)</span>
+                    <span>{ui.publications.btnDoi}</span>
                     <span>↗</span>
                   </a>
                 )}
@@ -340,7 +422,7 @@ function App() {
                   className="btn-copy-cite"
                   onClick={() => copyToClipboard(pub.citation, "Citation")}
                 >
-                  <span>📋 Copy Citation</span>
+                  <span>{ui.publications.btnCopyCite}</span>
                 </button>
               </div>
             </div>
@@ -351,10 +433,10 @@ function App() {
       {/* Academic Achievements & Research Grants */}
       <section className="section section-alt" id="grants">
         <div className="section-header">
-          <span className="section-tag">Recognition & Merit</span>
-          <h2 className="section-title">Research Grants & Academic Scholarships</h2>
+          <span className="section-tag">{ui.grants.sectionTag}</span>
+          <h2 className="section-title">{ui.grants.sectionTitle}</h2>
           <p className="section-desc">
-            Competitive research funding and academic excellence awards honoring contributions to horticultural sciences.
+            {ui.grants.sectionDesc}
           </p>
         </div>
 
@@ -375,10 +457,10 @@ function App() {
       {/* Technical & Scientific Skills */}
       <section className="section" id="skills">
         <div className="section-header">
-          <span className="section-tag">Competencies</span>
-          <h2 className="section-title">Laboratory, Agronomic & Analytical Expertise</h2>
+          <span className="section-tag">{ui.skills.sectionTag}</span>
+          <h2 className="section-title">{ui.skills.sectionTitle}</h2>
           <p className="section-desc">
-            Hands-on technical competencies in physiological instrumentation, digital microscopy, experimental design, and data modeling.
+            {ui.skills.sectionDesc}
           </p>
         </div>
 
@@ -401,19 +483,19 @@ function App() {
         {/* Languages Breakdown */}
         <div className="languages-box">
           <h3 style={{ fontSize: '1.25rem', color: '#ffffff', marginBottom: '0.4rem' }}>
-            🌐 Multilingual Proficiencies & Certifications
+            {ui.skills.langTitle}
           </h3>
           <p style={{ fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-            Strong multilingual capability enabling seamless cross-border research collaborations and international communication.
+            {ui.skills.langDesc}
           </p>
 
           <div className="languages-grid">
-            {languages.map((lang, lIdx) => (
+            {languages.map((langItem, lIdx) => (
               <div className="lang-item" key={lIdx}>
-                <div className="lang-name">{lang.name}</div>
-                <div className="lang-level">{lang.level}</div>
+                <div className="lang-name">{langItem.name}</div>
+                <div className="lang-level">{langItem.level}</div>
                 <div className="lang-badges">
-                  {lang.badges.map((b, bIdx) => (
+                  {langItem.badges.map((b, bIdx) => (
                     <span className="lang-badge-tag" key={bIdx}>• {b}</span>
                   ))}
                 </div>
@@ -426,10 +508,10 @@ function App() {
       {/* Other Experience & Leadership */}
       <section className="section section-alt" id="leadership">
         <div className="section-header">
-          <span className="section-tag">Professional Adaptability</span>
-          <h2 className="section-title">Community Extension & Work Experience</h2>
+          <span className="section-tag">{ui.leadership.sectionTag}</span>
+          <h2 className="section-title">{ui.leadership.sectionTitle}</h2>
           <p className="section-desc">
-            Agricultural extension demonstrations with farmers, bilingual Tokyo retail management, and international promotional collaboration.
+            {ui.leadership.sectionDesc}
           </p>
         </div>
 
@@ -440,7 +522,14 @@ function App() {
                 {exp.period} • {exp.location}
               </div>
               <h3 className="other-exp-role">{exp.role}</h3>
-              <div className="other-exp-org">{exp.organization}</div>
+              <div className="other-exp-org">
+                {exp.logo && (
+                  <span className="inst-logo-badge other-exp-logo-badge">
+                    <img src={exp.logo} alt={exp.organization} className="inst-logo-img" />
+                  </span>
+                )}
+                <span>{exp.organization}</span>
+              </div>
               <p className="other-exp-desc">{exp.description}</p>
             </div>
           ))}
@@ -450,10 +539,10 @@ function App() {
       {/* Contact Section */}
       <section className="section" id="contact">
         <div className="section-header">
-          <span className="section-tag">Let's Connect</span>
-          <h2 className="section-title">Contact & Scientific Inquiries</h2>
+          <span className="section-tag">{ui.contact.sectionTag}</span>
+          <h2 className="section-title">{ui.contact.sectionTitle}</h2>
           <p className="section-desc">
-            Interested in discussing research collaborations, seed physiology inquiries, or agricultural innovation? Feel free to reach out directly.
+            {ui.contact.sectionDesc}
           </p>
         </div>
 
@@ -464,20 +553,20 @@ function App() {
               <div className="contact-info-left">
                 <div className="contact-icon-bubble">✉</div>
                 <div>
-                  <div className="contact-label">Primary Email</div>
+                  <div className="contact-label">{ui.contact.primaryEmail}</div>
                   <div className="contact-val">{personal_info.email}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <a href={`mailto:${personal_info.email}`} className="btn-icon-action">
-                  Email
+                  {ui.contact.btnEmail}
                 </a>
                 <button
                   type="button"
                   className="btn-icon-action"
-                  onClick={() => copyToClipboard(personal_info.email, "Primary Email")}
+                  onClick={() => copyToClipboard(personal_info.email, ui.contact.primaryEmail)}
                 >
-                  Copy
+                  {ui.contact.btnCopy}
                 </button>
               </div>
             </div>
@@ -487,20 +576,20 @@ function App() {
               <div className="contact-info-left">
                 <div className="contact-icon-bubble">🏛</div>
                 <div>
-                  <div className="contact-label">University Email (Tokyo NODAI)</div>
+                  <div className="contact-label">{ui.contact.univEmail}</div>
                   <div className="contact-val">{personal_info.university_email}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <a href={`mailto:${personal_info.university_email}`} className="btn-icon-action">
-                  Email
+                  {ui.contact.btnEmail}
                 </a>
                 <button
                   type="button"
                   className="btn-icon-action"
-                  onClick={() => copyToClipboard(personal_info.university_email, "University Email")}
+                  onClick={() => copyToClipboard(personal_info.university_email, ui.contact.univEmail)}
                 >
-                  Copy
+                  {ui.contact.btnCopy}
                 </button>
               </div>
             </div>
@@ -510,20 +599,20 @@ function App() {
               <div className="contact-info-left">
                 <div className="contact-icon-bubble">🇯🇵</div>
                 <div>
-                  <div className="contact-label">Phone (Japan)</div>
+                  <div className="contact-label">{ui.contact.phoneJapan}</div>
                   <div className="contact-val">{personal_info.phone_japan}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <a href={`tel:${personal_info.phone_japan}`} className="btn-icon-action">
-                  Call
+                  {ui.contact.btnCall}
                 </a>
                 <button
                   type="button"
                   className="btn-icon-action"
-                  onClick={() => copyToClipboard(personal_info.phone_japan, "Japan Phone")}
+                  onClick={() => copyToClipboard(personal_info.phone_japan, ui.contact.phoneJapan)}
                 >
-                  Copy
+                  {ui.contact.btnCopy}
                 </button>
               </div>
             </div>
@@ -533,20 +622,20 @@ function App() {
               <div className="contact-info-left">
                 <div className="contact-icon-bubble">🇮🇳</div>
                 <div>
-                  <div className="contact-label">Phone (India)</div>
+                  <div className="contact-label">{ui.contact.phoneIndia}</div>
                   <div className="contact-val">{personal_info.phone_india}</div>
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <a href={`tel:${personal_info.phone_india}`} className="btn-icon-action">
-                  Call
+                  {ui.contact.btnCall}
                 </a>
                 <button
                   type="button"
                   className="btn-icon-action"
-                  onClick={() => copyToClipboard(personal_info.phone_india, "India Phone")}
+                  onClick={() => copyToClipboard(personal_info.phone_india, ui.contact.phoneIndia)}
                 >
-                  Copy
+                  {ui.contact.btnCopy}
                 </button>
               </div>
             </div>
@@ -554,18 +643,18 @@ function App() {
 
           <div style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', borderRadius: 'var(--radius-md)', padding: '2.5rem', backdropFilter: 'blur(12px)' }}>
             <h3 style={{ fontSize: '1.4rem', color: '#ffffff', marginBottom: '1rem' }}>
-              Current Base of Research
+              {ui.contact.baseTitle}
             </h3>
             <p style={{ color: 'var(--text-sub)', marginBottom: '1.5rem', fontSize: '0.95rem', lineHeight: '1.7' }}>
-              Currently conducting graduate studies and research across <strong>Tokyo University of Agriculture (Setagaya, Tokyo, Japan)</strong> and <strong>Wageningen University & Research (Netherlands)</strong>. Open to academic exchange, seed industry research collaborations, and conference speaking engagements.
+              {ui.contact.baseDesc}
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.8rem', paddingTop: '1.2rem', borderTop: '1px solid var(--border-subtle)' }}>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
-                📍 <strong>Location:</strong> {personal_info.location}
+                📍 <strong>{ui.contact.locationLabel}</strong> {personal_info.location}
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
-                🎓 <strong>Degrees:</strong> BSc (Tokyo NODAI), MSc Candidate (Tokyo NODAI & WUR Exchange)
+                🎓 <strong>{ui.contact.degreesLabel}</strong> {ui.contact.degreesVal}
               </div>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-sub)' }}>
                 💼{' '}
@@ -586,20 +675,28 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-nav">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#education">Education</a>
-          <a href="#research">Research</a>
-          <a href="#publications">Publications</a>
-          <a href="#grants">Grants</a>
-          <a href="#skills">Skills</a>
-          <a href="#contact">Contact</a>
+          <a href="#home">{ui.nav.home}</a>
+          <a href="#about">{ui.nav.about}</a>
+          <a href="#education">{ui.nav.education}</a>
+          <a href="#research">{ui.nav.research}</a>
+          <a href="#publications">{ui.nav.publications}</a>
+          <a href="#grants">{ui.nav.grants}</a>
+          <a href="#skills">{ui.nav.skills}</a>
+          <a href="#contact">{ui.nav.contact}</a>
+        </div>
+        <div className="footer-affiliations">
+          <span className="inst-logo-badge footer-logo">
+            <img src="/tokyo-nodai-logo.svg" alt="Tokyo University of Agriculture" className="inst-logo-img" />
+          </span>
+          <span className="inst-logo-badge footer-logo">
+            <img src="/wur-logo.svg" alt="Wageningen University & Research" className="inst-logo-img" />
+          </span>
         </div>
         <p className="footer-copy">
-          © {new Date().getFullYear()} {personal_info.full_name} • MSc Plant Sciences (Horticulture)
+          © {new Date().getFullYear()} {personal_info.full_name} • {ui.footer.copySuffix}
         </p>
         <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-          Tokyo University of Agriculture & Wageningen University & Research
+          {ui.footer.subText}
         </p>
       </footer>
     </>

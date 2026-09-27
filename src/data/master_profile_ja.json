@@ -1,0 +1,390 @@
+{
+  "personal_info": {
+    "full_name": "パルニール・サハラン (Parneel Saharan)",
+    "display_name": "パルニール",
+    "headline": "植物科学（園芸農学）修士課程・持続可能農業研究者",
+    "bio": "植物生理学を専門とし、シロイヌナズナ（Arabidopsis thaliana）における青色光受容体クリプトクロムと種子品質に関する修士論文研究、ならびに種子プライミングと塩分ストレス耐性に関する2報の査読付き学術論文の共著者として研究を展開。環境制御温室・圃場試験の実験設計から生理・光学的データ解析、顕微鏡画像解析までを一貫して実践。日本、インド、台湾、オランダにおける実験指導や国際フィールドワークを通じて、学際的な国際共同研究チームで精力的に活動しています。",
+    "email": "parneel131120001@gmail.com",
+    "university_email": "13324012@nodai.ac.jp",
+    "phone_japan": "+81 08065535312",
+    "phone_india": "+91 8571984405",
+    "location": "東京都世田谷区",
+    "current_institutions": [
+      {
+        "name": "東京農業大学大学院 国際食料農業科学研究科 国際農業開発学専攻",
+        "role": "農学修士課程（大学院生）",
+        "location": "日本・東京",
+        "logo": "/tokyo-nodai-logo.svg"
+      },
+      {
+        "name": "ワーゲニンゲン大学・研究機関（WUR）",
+        "role": "植物生理学研究室 客員研究員",
+        "location": "オランダ・ワーゲニンゲン",
+        "logo": "/wur-logo.svg"
+      }
+    ],
+    "linkedin": "https://www.linkedin.com/in/parneel-saharan-268179250/"
+  },
+  "education": [
+    {
+      "institution": "東京農業大学大学院",
+      "degree": "農学修士課程（園芸科学）",
+      "field_of_study": "国際食料農業科学研究科 国際農業開発学専攻",
+      "start_date": "2024年4月",
+      "end_date": "在学中（修了見込）",
+      "status": "在学中",
+      "location": "日本・東京",
+      "logo": "/tokyo-nodai-logo.svg",
+      "courses": [
+        "植物生理学特論",
+        "種子科学・技術論",
+        "作物生産管理学特論",
+        "持続可能園芸農学特論",
+        "収穫後生理・ポストハーベスト技術論"
+      ],
+      "highlights": [
+        "種子生理学、鉄コーティング直播技術、環境ストレス耐性向上プロトコルの開発に注力。",
+        "極めて競争率の高い「公益財団法人 神林留学生奨学会 研究助成金」および「大学院第3種奨学生」に採択。"
+      ]
+    },
+    {
+      "institution": "ワーゲニンゲン大学・研究機関（WUR）",
+      "degree": "修士課程 交換留学・研究員プログラム",
+      "field_of_study": "植物科学科 / 植物生理学研究室",
+      "start_date": "2025年8月",
+      "end_date": "2026年8月",
+      "status": "交換研究員",
+      "location": "オランダ・ワーゲニンゲン",
+      "logo": "/wur-logo.svg",
+      "courses": [
+        "有機農業・アグロエコロジー実践論",
+        "持続可能園芸生産特論",
+        "高等植物生理学",
+        "農業データ解析のためのPythonプログラミング"
+      ],
+      "thesis": {
+        "title": "Light on Seeds: The Role of Cryptochrome Photoreceptors in Plant Development and Seed Quality Traits in Arabidopsis thaliana（種子への光：シロイヌナズナにおける植物発生および種子品質特性に関わるクリプトクロム光受容体の役割）",
+        "lab": "ワーゲニンゲン大学 植物生理学研究室（Laboratory of Plant Physiology, WUR）",
+        "period": "2026年2月 – 2026年7月",
+        "description": "モデル植物シロイヌナズナを用い、青色光受容体クリプトクロム（cry1/cry2）が発芽活力、種子品質特性、および幼苗形態形成を制御する生理学的メカニズムを定量的に解明。"
+      },
+      "highlights": [
+        "世界最高峰の農学研究機関であるワーゲニンゲン大学（WUR）植物生理学研究室にて修士論文研究を実施。",
+        "分光光度分析、形態学的画像解析、定量フェノタイピングを統合した先端生理学実験を展開。"
+      ]
+    },
+    {
+      "institution": "東京農業大学",
+      "degree": "学士（農学）",
+      "field_of_study": "国際食料情報学部 国際農業開発学科",
+      "start_date": "2020年4月",
+      "end_date": "2024年3月",
+      "gpa": "3.00 / 4.00",
+      "location": "日本・東京",
+      "logo": "/tokyo-nodai-logo.svg",
+      "highlights": [
+        "4年間にわたり「特別交換奨学生（授業料全額免除＋年間給付型奨学金）」に採択。",
+        "熱帯園芸学・種子科学研究室にて卒業研究を実施、学術誌共著論文を執筆。"
+      ]
+    },
+    {
+      "institution": "CCSハリヤーナー農業大学（CCSHAU）",
+      "degree": "農業科学予科（B.Sc. Hons 準備課程）",
+      "field_of_study": "農業科学・基礎自然科学",
+      "start_date": "2017年8月",
+      "end_date": "2019年7月",
+      "gpa": "95.7%（学科首席・第1位）",
+      "location": "インド・ハリヤーナー州",
+      "logo": "/ccshau-logo.png",
+      "highlights": [
+        "学科第1位（95.7%）の首席栄誉で卒業。",
+        "2年連続で大学学長優秀賞・成績優秀者奨学金（University Merit Scholarship）を受賞。"
+      ]
+    }
+  ],
+  "publications": [
+    {
+      "id": "rice-seed-priming-2025",
+      "title": "Effect of priming treatment on improving germination and seedling performance of aged and iron-coated rice seeds aiming for direct sowing",
+      "authors": "Habibi, N., Parneel, Terada, N., Pachakkil, B. et al.",
+      "journal": "Plants",
+      "volume": "14",
+      "issue": "1683",
+      "year": "2025",
+      "type": "査読付き原著論文",
+      "doi": "https://doi.org/10.3390/plants14111683",
+      "description": "省力・持続可能な直播水稲栽培体系の確立に向け、鉄コーティングを施した老化種子の発芽率向上、均一な苗立ち、および初期生育活力を改善する種子プライミング処理条件を解明。",
+      "tags": [
+        "種子プライミング",
+        "水稲 (Oryza sativa)",
+        "直播栽培",
+        "種子生理学",
+        "鉄コーティング"
+      ],
+      "citation": "Habibi, N., Parneel, Terada, N., Pachakkil, B. et al. (2025). Effect of priming treatment on improving germination and seedling performance of aged and iron-coated rice seeds aiming for direct sowing. Plants, 14, 1683."
+    },
+    {
+      "id": "tomato-seed-priming-2024",
+      "title": "Novel insights into seed priming for tomato plants: restoring root vitality under salt stress",
+      "authors": "Habibi, N., Tayobong, R.R.P., Parneel et al.",
+      "journal": "Horticulture, Environment and Biotechnology",
+      "year": "2024",
+      "type": "査読付き原著論文",
+      "doi": "https://doi.org/10.1007/s13580-024-00651-1",
+      "description": "重度の塩分ストレス環境下において、生理的種子プライミング処理がトマト幼苗の根端成長、細胞生存力、および初期バイオマス形成を有意に回復させる生理機構を解明。",
+      "tags": [
+        "トマト (Solanum lycopersicum)",
+        "塩ストレス",
+        "種子プライミング",
+        "根系活性",
+        "ストレス生理学"
+      ],
+      "citation": "Habibi, N., Tayobong, R.R.P., Parneel et al. (2024). Novel insights into seed priming for tomato plants: restoring root vitality under salt stress. Horticulture, Environment and Biotechnology."
+    },
+    {
+      "id": "ai-horticulture-2025",
+      "title": "Artificial Intelligence in Horticulture for Sustainable Agriculture",
+      "authors": "Parneel",
+      "journal": "Agriculture and Food e-Newsletter",
+      "volume": "7",
+      "issue": "2",
+      "pages": "259–261",
+      "year": "2025",
+      "type": "総説・学術展望",
+      "doi": "",
+      "description": "コンピュータビジョン、分光リモートセンシング、AI予測モデルを施設園芸の微気象制御、高精度フェノタイピング、資源最適配分に応用する最新動向を考察。",
+      "tags": [
+        "人工知能 (AI)",
+        "スマート園芸",
+        "持続可能農業",
+        "精密農業"
+      ],
+      "citation": "Parneel (2025). Artificial Intelligence in Horticulture for Sustainable Agriculture. Agriculture and Food e-Newsletter, 7(2), 259–261."
+    }
+  ],
+  "research_experience": [
+    {
+      "title": "Rooting for the Future: リンゲホフ有機農場における土壌再生・カバークロップ実証",
+      "organization": "ワーゲニンゲン大学・研究機関（WUR）",
+      "period": "2025年9月 – 10月",
+      "category": "フィールド研究・持続可能性",
+      "category_key": "field",
+      "location": "オランダ・リンゲホフ有機農場",
+      "logo": "/wur-logo.svg",
+      "description": "オランダ・リンゲホフ有機農場において、土壌有機物含量の向上、土壌微生物叢の活性化、ならびに干ばつ・豪雨耐性を高める多様なカバークロップ輪作および環境再生型農業技術を実証・検証。定量的生態データを統合し学際シンポジウムにてポスター発表。",
+      "skills_used": [
+        "カバークロップ生態学",
+        "土壌健全度評価",
+        "学際的国際共同研究",
+        "学術ポスター設計"
+      ]
+    },
+    {
+      "title": "熱帯園芸学研究室 ティーチング・アシスタント（TA）",
+      "organization": "東京農業大学",
+      "period": "2024年4月 – 2025年7月",
+      "category": "教育指導・研究指導",
+      "category_key": "teaching",
+      "location": "日本・東京",
+      "logo": "/tokyo-nodai-logo.svg",
+      "description": "学部生を対象とした植物生理学・園芸技術の実習指導を全編日本語で担当。実験機器の安全管理、試薬調製、吸光分光分析の指導、および実験設計やデータ完全性のメンター指導を実施。",
+      "skills_used": [
+        "大学実験指導",
+        "分光光度分析",
+        "学生メンターシップ",
+        "実験室安全管理"
+      ]
+    },
+    {
+      "title": "精密農業・作物モデリング・リモートセンシング国際フェローシップ",
+      "organization": "台湾国立大学（NTU）アグリコンソーシアム",
+      "period": "2024年7月",
+      "category": "国際共同プログラム",
+      "category_key": "fellowship",
+      "location": "台湾・台北",
+      "logo": "/ntu-logo.svg",
+      "description": "精密農業アーキテクチャ、マルチスペクトルリモートセンシング、作学生育シミュレーションモデル、農業デジタル変革（DX）に関する国際集中共同プログラムを修了。",
+      "skills_used": [
+        "精密農業",
+        "作学生育シミュレーション",
+        "マルチスペクトル解析",
+        "国際チーム協働"
+      ]
+    },
+    {
+      "title": "宮古島亜熱帯農場における作物栽培・生理動態実習",
+      "organization": "東京農業大学 宮古島亜熱帯農場",
+      "period": "2022年12月",
+      "category": "フィールド研究・持続可能性",
+      "category_key": "field",
+      "location": "日本・沖縄県宮古島",
+      "logo": "/tokyo-nodai-logo.svg",
+      "description": "コーヒーやヤムイモをはじめとする亜熱帯作物圃場において、栽培管理および生理モニタリングを実施。機械化管理、土壌水分動態観測、島嶼環境下における収量調査を実施。",
+      "skills_used": [
+        "コーヒー・ヤムイモ栽培",
+        "農業機械化",
+        "微気象モニタリング",
+        "圃場栽培試験"
+      ]
+    },
+    {
+      "title": "第20回 国際学生サミット（ISS）議長・大学代表",
+      "organization": "東京農業大学",
+      "period": "2021年9月",
+      "category": "教育指導・研究指導",
+      "category_key": "teaching",
+      "location": "日本・東京",
+      "logo": "/tokyo-nodai-logo.svg",
+      "description": "食料・農業・環境に関する第20回国際学生サミットにおいて東京農業大学代表議長に選出。世界各国の大学代表と全体総会を主導し、青年主導の食料安全保障に向けた多国間共同宣言を策定。",
+      "skills_used": [
+        "国際総会議長",
+        "多国間外交・交渉",
+        "英語学術プレゼン",
+        "共同宣言策定"
+      ]
+    }
+  ],
+  "academic_achievements": [
+    {
+      "title": "神林留学生奨学会 研究助成金",
+      "amount": "1,000,000 円",
+      "period": "2025年 – 2026年",
+      "issuer": "公益財団法人 神林留学生奨学会",
+      "description": "植物生理学、種子プライミングの生理機構解明、および作物の環境ストレス耐性向上に向けた実験研究に対して授与された競争的研究助成金。"
+    },
+    {
+      "title": "神林留学生奨学会 奨学生",
+      "amount": "月額 140,000 円",
+      "period": "2024–2025年 & 2026–2027年",
+      "issuer": "公益財団法人 神林留学生奨学会",
+      "description": "園芸科学・植物科学における卓越した学業成績および研究業績を評価され採択された給付型奨学金。"
+    },
+    {
+      "title": "特別交換奨学生（学部4年間）",
+      "amount": "授業料全額免除 ＋ 年間495,000円生活給付金",
+      "period": "2020年 – 2024年",
+      "issuer": "東京農業大学",
+      "description": "学業優秀な外国人留学生に授与される4年間の学費全額免除および年間生活給付金。"
+    },
+    {
+      "title": "大学院第3種奨学生（修士課程）",
+      "amount": "入学金・学費全額免除",
+      "period": "2024年 – 2026年",
+      "issuer": "東京農業大学",
+      "description": "大学院入学金、授業料、実験実習費等の学費全額を免除する優秀学生向け支援。"
+    },
+    {
+      "title": "学長表彰・大学優秀賞（Merit Scholarship）",
+      "amount": "学科首席表彰",
+      "period": "2017年 – 2019年",
+      "issuer": "CCSハリヤーナー農業大学",
+      "description": "農業科学予科において学科第1位（95.7%）の首席栄誉を達成し、2年連続で受賞。"
+    }
+  ],
+  "skills": [
+    {
+      "category": "生理化学分析・実験室技術",
+      "icon": "flask",
+      "items": [
+        "電気伝導度（EC）測定",
+        "糖度（Brix）測定",
+        "pH & 浸透ポテンシャル分析",
+        "色彩色差計",
+        "紫外可視分光光度計（UV-Vis）",
+        "種子プライミング & コーティング技術",
+        "ストレス生理学的アッセイ"
+      ]
+    },
+    {
+      "category": "顕微鏡観察 & 作物フェノタイピング",
+      "icon": "microscope",
+      "items": [
+        "光学顕微鏡観察",
+        "蛍光顕微鏡解析",
+        "ImageJ デジタル画像解析",
+        "種子発芽キネティクス解析",
+        "根系形態（Root Architecture）トレース"
+      ]
+    },
+    {
+      "category": "農学実証 & 実験計画法",
+      "icon": "sprout",
+      "items": [
+        "環境制御型温室管理",
+        "圃場作付け・苗立ち管理",
+        "カバークロップ輪作体系",
+        "直播栽培技術",
+        "亜熱帯作物栽培（コーヒー等）",
+        "有機土壌健全度評価"
+      ]
+    },
+    {
+      "category": "データ解析 & 科学計算",
+      "icon": "chart",
+      "items": [
+        "R言語（分散分析 ANOVA・統計解析）",
+        "Python（農業データ解析）",
+        "精密農業モデリング",
+        "Excel（高度データモデリング）",
+        "学術論文・レポート執筆",
+        "学術技術プレゼンテーション"
+      ]
+    }
+  ],
+  "languages": [
+    {
+      "name": "英語",
+      "level": "流暢 / 学術・ビジネス実務レベル",
+      "badges": [
+        "PTE: 78/90 (2023)",
+        "IELTS Academic: 7.0 Band (2024年12月)"
+      ]
+    },
+    {
+      "name": "日本語",
+      "level": "流暢 / 学術・日常ビジネス実務レベル",
+      "badges": [
+        "東京在住5年以上",
+        "TA実験指導・店舗実務経験"
+      ]
+    },
+    {
+      "name": "ヒンディー語",
+      "level": "ネイティブ / 完全バイリンガル",
+      "badges": [
+        "母語レベル"
+      ]
+    },
+    {
+      "name": "ハリヤーンウィー語",
+      "level": "ネイティブ",
+      "badges": [
+        "母語"
+      ]
+    }
+  ],
+  "other_experience": [
+    {
+      "role": "農業普及・農家交流ボランティア",
+      "organization": "CCSHAU Krishi Vigyan Kendra（農業科学センター）",
+      "location": "インド・ハリヤーナー州",
+      "period": "2019年 – 2020年",
+      "logo": "/ccshau-logo.png",
+      "description": "地域の先駆的農家と直接対話を行い、新しい農学的管理技術、優良種子品種、持続可能な病害虫防除法の普及実演を支援。"
+    },
+    {
+      "role": "店舗販売アシスタント・顧客対応スペシャリスト",
+      "organization": "ローソン（都内店舗）",
+      "location": "日本・東京",
+      "period": "2021年 – 2025年",
+      "description": "東京の多忙な小売環境において、全編日本語による接客、在庫管理、商品発注、マルチタスク管理を担当。学問と両立しながら高度な異文化コミュニケーション力を培う。"
+    },
+    {
+      "role": "広告プロモーションモデル・ブランドアンバサダー",
+      "organization": "株式会社フリーウェーブ（Freewave Inc.）",
+      "location": "日本・東京",
+      "period": "2023年 – 2025年",
+      "description": "国際的な映像制作チーム、クリエイティブディレクター、カメラマンと協働し、企業の商業プロモーション撮影に参画。対人適応力と表現力を発揮。"
+    }
+  ]
+}

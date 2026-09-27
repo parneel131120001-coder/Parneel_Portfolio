@@ -12,13 +12,15 @@
     "current_institutions": [
       {
         "name": "Tokyo University of Agriculture",
-        "role": "MSc Candidate (International Agriculture)",
-        "location": "Tokyo, Japan"
+        "role": "MSc Candidate (Dept. of International Agricultural Development)",
+        "location": "Tokyo, Japan",
+        "logo": "/tokyo-nodai-logo.svg"
       },
       {
         "name": "Wageningen University & Research",
         "role": "MSc Exchange Researcher (Plant Physiology)",
-        "location": "Wageningen, Netherlands"
+        "location": "Wageningen, Netherlands",
+        "logo": "/wur-logo.svg"
       }
     ],
     "linkedin": "https://www.linkedin.com/in/parneel-saharan-268179250/"
@@ -27,11 +29,12 @@
     {
       "institution": "Tokyo University of Agriculture",
       "degree": "MSc in Horticultural Science",
-      "field_of_study": "International Agriculture",
+      "field_of_study": "Graduate School of International Food and Agricultural Science, Department of International Agricultural Development",
       "start_date": "Apr 2024",
       "end_date": "Present (Ongoing)",
       "status": "Ongoing",
       "location": "Tokyo, Japan",
+      "logo": "/tokyo-nodai-logo.svg",
       "courses": [
         "Plant Physiology",
         "Seed Science and Technology",
@@ -52,6 +55,7 @@
       "end_date": "Aug 2026",
       "status": "Exchange Fellowship",
       "location": "Wageningen, Netherlands",
+      "logo": "/wur-logo.svg",
       "courses": [
         "Organic Farming Practices",
         "Sustainable Horticultural Practices",
@@ -77,6 +81,7 @@
       "end_date": "Mar 2024",
       "gpa": "3.00 / 4.00",
       "location": "Tokyo, Japan",
+      "logo": "/tokyo-nodai-logo.svg",
       "highlights": [
         "Four-year recipient of Special Exchange Scholarship (full tuition waiver + annual stipend).",
         "Completed thesis work in seed science and tropical horticultural science laboratory."
@@ -90,6 +95,7 @@
       "end_date": "Jul 2019",
       "gpa": "95.7% (First Rank)",
       "location": "Haryana, India",
+      "logo": "/ccshau-logo.png",
       "highlights": [
         "Graduated 1st Rank with 95.7% overall distinction.",
         "Awarded University Merit Scholarship for two consecutive academic years."
@@ -162,7 +168,9 @@
       "organization": "Wageningen University & Research (WUR)",
       "period": "Sep – Oct 2025",
       "category": "Field Research & Sustainability",
+      "category_key": "field",
       "location": "Lingehof Organic Farm, Netherlands",
+      "logo": "/wur-logo.svg",
       "description": "Investigated diversified cover-crop rotations and regenerative agricultural strategies at Lingehof Organic Farm to enhance soil organic matter, microbial resilience, and drought/excess-rainfall tolerance. Synthesized quantitative ecological data and presented findings in a multidisciplinary symposium poster.",
       "skills_used": [
         "Cover-crop ecology",
@@ -176,7 +184,9 @@
       "organization": "Tokyo University of Agriculture",
       "period": "Apr 2024 – July 2025",
       "category": "Academic Teaching & Lab Leadership",
+      "category_key": "teaching",
       "location": "Tokyo, Japan",
+      "logo": "/tokyo-nodai-logo.svg",
       "description": "Guided undergraduate students through practical experimental sessions in plant physiology and horticultural techniques. Supervised instrument safety, reagent preparation, analytical spectroscopy, and mentored students on data integrity and experimental design.",
       "skills_used": [
         "Laboratory instruction",
@@ -190,7 +200,9 @@
       "organization": "National Taiwan University (NTU) - University Consortium",
       "period": "Jul 2024",
       "category": "International Fellowship",
+      "category_key": "fellowship",
       "location": "Taipei, Taiwan",
+      "logo": "/ntu-logo.svg",
       "description": "Completed an intensive two-week international cohort program focusing on precision farming architectures, remote multispectral sensing, crop growth simulation modeling, and digital agricultural transformation with global researchers.",
       "skills_used": [
         "Precision agriculture",
@@ -204,7 +216,9 @@
       "organization": "Tokyo NODAI Subtropical Field Station",
       "period": "Dec 2022",
       "category": "Field Research & Sustainability",
+      "category_key": "field",
       "location": "Miyakojima, Okinawa, Japan",
+      "logo": "/tokyo-nodai-logo.svg",
       "description": "Executed hands-on crop production and physiological monitoring on subtropical cultivars including coffee and yams. Conducted mechanized field management, soil moisture monitoring, and practical field harvest data collection under island climatic conditions.",
       "skills_used": [
         "Coffee & yam management",
@@ -218,7 +232,9 @@
       "organization": "Tokyo University of Agriculture",
       "period": "Sep 2021",
       "category": "Academic Teaching & Lab Leadership",
+      "category_key": "teaching",
       "location": "Tokyo, Japan",
+      "logo": "/tokyo-nodai-logo.svg",
       "description": "Elected as Chairperson to represent Tokyo University of Agriculture at the 20th International Student Summit on Food, Agriculture and Environment. Moderated international plenary sessions and synthesized multilateral consensus on youth-driven food security.",
       "skills_used": [
         "Plenary moderation",
@@ -233,14 +249,14 @@
       "title": "Kambayashi Research Grant",
       "amount": "¥1,000,000",
       "period": "2025 – 2026",
-      "issuer": "Kambayashi Foundation",
+      "issuer": "Kambayashi Scholarship Foundation for Foreign Students (神林留学生奨学会)",
       "description": "Prestigious one-year research grant awarded to fund experimental investigations into plant physiology, seed priming mechanisms, and crop stress resilience."
     },
     {
       "title": "Kambayashi Scholarship for Academic Excellence",
       "amount": "¥140,000 / month",
       "period": "2024–2025 & 2026–2027",
-      "issuer": "Kambayashi Foundation",
+      "issuer": "Kambayashi Scholarship Foundation for Foreign Students (神林留学生奨学会)",
       "description": "Competitive scholarship granted for outstanding academic merit and research contributions in horticultural sciences."
     },
     {
@@ -353,6 +369,7 @@
       "organization": "Krishi Vigyan Kendra, CCSHAU",
       "location": "Haryana, India",
       "period": "2019 – 2020",
+      "logo": "/ccshau-logo.png",
       "description": "Engaged directly with regional progressive farmers to demonstrate novel agronomic practices, seed varieties, and sustainable crop protection methods."
     },
     {
