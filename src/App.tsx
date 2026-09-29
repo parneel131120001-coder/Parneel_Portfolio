@@ -153,7 +153,14 @@ function App() {
         <div className="hero-content">
           <div className="hero-status-pill">
             <span className="status-pulse"></span>
-            <span>{ui.hero.rolePill}</span>
+            <div className="hero-keywords-list">
+              {ui.hero.keywords.map((kw, i) => (
+                <span key={i} className="hero-kw-item">
+                  {i > 0 && <span className="hero-kw-dot">•</span>}
+                  <span className="hero-kw-text">{kw}</span>
+                </span>
+              ))}
+            </div>
           </div>
 
           <h1 className="hero-title">{personal_info.full_name}</h1>
@@ -165,9 +172,21 @@ function App() {
             {personal_info.current_institutions.map((inst, idx) => (
               <div className="affiliation-badge" key={idx}>
                 {inst.logo ? (
-                  <span className="inst-logo-badge">
-                    <img src={inst.logo} alt={inst.name} className="inst-logo-img" />
-                  </span>
+                  inst.url ? (
+                    <a
+                      href={inst.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inst-logo-badge inst-logo-link"
+                      title={`${inst.name} Official Website ↗`}
+                    >
+                      <img src={inst.logo} alt={inst.name} className="inst-logo-img" />
+                    </a>
+                  ) : (
+                    <span className="inst-logo-badge">
+                      <img src={inst.logo} alt={inst.name} className="inst-logo-img" />
+                    </span>
+                  )
                 ) : (
                   <span>🌱</span>
                 )}
@@ -268,9 +287,21 @@ function App() {
                   <h3 className="edu-degree">{edu.degree}</h3>
                   <div className="edu-inst-row">
                     {edu.logo && (
-                      <span className="inst-logo-badge edu-logo-badge">
-                        <img src={edu.logo} alt={edu.institution} className="inst-logo-img" />
-                      </span>
+                      edu.url ? (
+                        <a
+                          href={edu.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inst-logo-badge edu-logo-badge inst-logo-link"
+                          title={`${edu.institution} Official Website ↗`}
+                        >
+                          <img src={edu.logo} alt={edu.institution} className="inst-logo-img" />
+                        </a>
+                      ) : (
+                        <span className="inst-logo-badge edu-logo-badge">
+                          <img src={edu.logo} alt={edu.institution} className="inst-logo-img" />
+                        </span>
+                      )
                     )}
                     <span className="edu-institution">{edu.institution}</span>
                   </div>
@@ -351,9 +382,21 @@ function App() {
               <h3 className="research-title">{item.title}</h3>
               <div className="research-org-line">
                 {item.logo && (
-                  <span className="inst-logo-badge research-logo-badge">
-                    <img src={item.logo} alt={item.organization} className="inst-logo-img" />
-                  </span>
+                  item.url ? (
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inst-logo-badge research-logo-badge inst-logo-link"
+                      title={`${item.organization} Official Website ↗`}
+                    >
+                      <img src={item.logo} alt={item.organization} className="inst-logo-img" />
+                    </a>
+                  ) : (
+                    <span className="inst-logo-badge research-logo-badge">
+                      <img src={item.logo} alt={item.organization} className="inst-logo-img" />
+                    </span>
+                  )
                 )}
                 <span>📍 {item.organization} • {item.location}</span>
               </div>
@@ -524,9 +567,21 @@ function App() {
               <h3 className="other-exp-role">{exp.role}</h3>
               <div className="other-exp-org">
                 {exp.logo && (
-                  <span className="inst-logo-badge other-exp-logo-badge">
-                    <img src={exp.logo} alt={exp.organization} className="inst-logo-img" />
-                  </span>
+                  exp.url ? (
+                    <a
+                      href={exp.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inst-logo-badge other-exp-logo-badge inst-logo-link"
+                      title={`${exp.organization} Official Website ↗`}
+                    >
+                      <img src={exp.logo} alt={exp.organization} className="inst-logo-img" />
+                    </a>
+                  ) : (
+                    <span className="inst-logo-badge other-exp-logo-badge">
+                      <img src={exp.logo} alt={exp.organization} className="inst-logo-img" />
+                    </span>
+                  )
                 )}
                 <span>{exp.organization}</span>
               </div>
@@ -685,12 +740,24 @@ function App() {
           <a href="#contact">{ui.nav.contact}</a>
         </div>
         <div className="footer-affiliations">
-          <span className="inst-logo-badge footer-logo">
+          <a
+            href={lang === 'ja' ? 'https://www.nodai.ac.jp/' : 'https://www.nodai.ac.jp/english/'}
+            target="_blank"
+            rel="noreferrer"
+            className="inst-logo-badge footer-logo inst-logo-link"
+            title="Tokyo University of Agriculture Official Website ↗"
+          >
             <img src="/tokyo-nodai-logo.svg" alt="Tokyo University of Agriculture" className="inst-logo-img" />
-          </span>
-          <span className="inst-logo-badge footer-logo">
+          </a>
+          <a
+            href={lang === 'ja' ? 'https://www.wur.nl/' : 'https://www.wur.nl/en.htm'}
+            target="_blank"
+            rel="noreferrer"
+            className="inst-logo-badge footer-logo inst-logo-link"
+            title="Wageningen University & Research Official Website ↗"
+          >
             <img src="/wur-logo.svg" alt="Wageningen University & Research" className="inst-logo-img" />
-          </span>
+          </a>
         </div>
         <p className="footer-copy">
           © {new Date().getFullYear()} {personal_info.full_name} • {ui.footer.copySuffix}

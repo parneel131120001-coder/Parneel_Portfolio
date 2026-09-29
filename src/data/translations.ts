@@ -11,6 +11,7 @@ export interface UITranslation {
   };
   hero: {
     rolePill: string;
+    keywords: string[];
     btnPublications: string;
     btnResearch: string;
     btnContact: string;
@@ -107,7 +108,14 @@ export const uiTranslations: Record<'en' | 'ja', UITranslation> = {
       contact: "Contact"
     },
     hero: {
-      rolePill: "Plant Physiology & Sustainable Horticulture Researcher",
+      rolePill: "International Agricultural Development • Agricultural Science • Agronomy • Horticulture • Sustainable Agriculture",
+      keywords: [
+        "International Agricultural Development",
+        "Agricultural Science",
+        "Agronomy",
+        "Horticulture",
+        "Sustainable Agriculture"
+      ],
       btnPublications: "View Publications",
       btnResearch: "Explore Research",
       btnContact: "Get In Touch",
@@ -181,14 +189,14 @@ export const uiTranslations: Record<'en' | 'ja', UITranslation> = {
       btnCall: "Call",
       btnCopy: "Copy",
       baseTitle: "Current Base of Research",
-      baseDesc: "Currently conducting graduate studies and research across Tokyo University of Agriculture (Setagaya, Tokyo, Japan) and Wageningen University & Research (Netherlands). Open to academic exchange, seed industry research collaborations, and conference speaking engagements.",
+      baseDesc: "Currently based at Tokyo University of Agriculture (Setagaya, Tokyo, Japan) in the Department of International Agricultural Development, with international graduate exchange research experience at Wageningen University & Research (Netherlands). Open to academic exchange, seed industry research collaborations, and conference speaking engagements.",
       locationLabel: "Location:",
       degreesLabel: "Degrees:",
-      degreesVal: "BSc (Tokyo NODAI), MSc Candidate (Tokyo NODAI & WUR Exchange)"
+      degreesVal: "BSc (Tokyo NODAI), MSc Candidate (Tokyo NODAI) • Former Exchange Student (WUR)"
     },
     footer: {
       copySuffix: "MSc Plant Sciences (Horticulture)",
-      subText: "Tokyo University of Agriculture & Wageningen University & Research"
+      subText: "Tokyo University of Agriculture (Home Base) • Wageningen University & Research (Exchange Student)"
     },
     toasts: {
       copiedSuccess: "copied to clipboard!",
@@ -207,7 +215,14 @@ export const uiTranslations: Record<'en' | 'ja', UITranslation> = {
       contact: "お問い合わせ"
     },
     hero: {
-      rolePill: "植物生理学・持続可能農業研究者",
+      rolePill: "国際農業開発 • 農業科学 • 作物栽培学（アグロノミー） • 園芸学 • 持続可能農業",
+      keywords: [
+        "国際農業開発",
+        "農業科学",
+        "作物栽培学（アグロノミー）",
+        "園芸学",
+        "持続可能農業"
+      ],
       btnPublications: "論文一覧を見る",
       btnResearch: "研究実績を見る",
       btnContact: "お問い合わせ",
@@ -220,7 +235,7 @@ export const uiTranslations: Record<'en' | 'ja', UITranslation> = {
       sectionTitle: "研究理念と専門領域",
       sectionDesc: "基礎的な植物光生物学と実践的な種子機能向上技術を架橋し、地球規模の気候変動に立ち向かう強靭な作物生産体系の創出を目指します。",
       card1Title: "🔬 植物生理学 & 青色光受容体",
-      card1Desc: "オランダ・ワーゲニンゲン大学にて、シロイヌナズナ（Arabidopsis thaliana）における青色光受容体クリプトクロムが植物発生、種子活力、および形態形成に及ぼす生理的役割を解明。",
+      card1Desc: "オランダ・ワーヘニンゲン大学にて、シロイヌナズナ（Arabidopsis thaliana）における青色光受容体クリプトクロムが植物発生、種子活力、および形態形成に及ぼす生理的役割を解明。",
       card2Title: "🌾 種子プライミング & 直播栽培",
       card2Desc: "塩分ストレス下でのトマト幼苗の根端活性回復、および鉄コーティング水稲老化種子の発芽向上と直播適性に関する査読付き学術論文を共著執筆。",
       card3Title: "🌍 国際共同研究 & フィールド実証",
@@ -281,14 +296,14 @@ export const uiTranslations: Record<'en' | 'ja', UITranslation> = {
       btnCall: "発信",
       btnCopy: "コピー",
       baseTitle: "現在の研究拠点",
-      baseDesc: "現在、東京農業大学大学院（東京都世田谷区）およびワーゲニンゲン大学・研究機関（オランダ）を拠点に研究活動を展開中。学術交流、種苗・アグリテック企業との共同研究、国際学会での発表機会を歓迎いたします。",
+      baseDesc: "現在、東京農業大学大学院（東京都世田谷区・国際農業開発学専攻）を研究拠点として活動中（世界最高峰の農学研究機関であるオランダ・ワーヘニンゲン大学（WUR）への交換留学経験あり）。学術交流、種苗・アグリテック企業との共同研究、国際学会での発表機会を歓迎いたします。",
       locationLabel: "研究拠点:",
       degreesLabel: "取得・在籍学位:",
-      degreesVal: "学士（農学・東京農業大学）、農学修士課程（東京農業大学大学院 & ワーゲニンゲン大学 客員研究員）"
+      degreesVal: "学士（農学・東京農業大学）、農学修士課程在籍（東京農業大学大学院）・元交換留学生（ワーヘニンゲン大学（WUR））"
     },
     footer: {
       copySuffix: "東京農業大学大学院 農学修士課程（植物科学・園芸農学）",
-      subText: "東京農業大学大学院 & ワーゲニンゲン大学・研究機関（WUR）"
+      subText: "東京農業大学大学院（本拠点） • ワーヘニンゲン大学（WUR 交換留学生）"
     },
     toasts: {
       copiedSuccess: "をクリップボードにコピーしました！",

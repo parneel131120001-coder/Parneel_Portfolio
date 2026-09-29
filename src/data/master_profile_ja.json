@@ -14,13 +14,8 @@
         "name": "東京農業大学大学院 国際食料農業科学研究科 国際農業開発学専攻",
         "role": "農学修士課程（大学院生）",
         "location": "日本・東京",
-        "logo": "/tokyo-nodai-logo.svg"
-      },
-      {
-        "name": "ワーゲニンゲン大学・研究機関（WUR）",
-        "role": "植物生理学研究室 客員研究員",
-        "location": "オランダ・ワーゲニンゲン",
-        "logo": "/wur-logo.svg"
+        "logo": "/tokyo-nodai-logo.svg",
+        "url": "https://www.nodai.ac.jp/"
       }
     ],
     "linkedin": "https://www.linkedin.com/in/parneel-saharan-268179250/"
@@ -35,6 +30,7 @@
       "status": "在学中",
       "location": "日本・東京",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/",
       "courses": [
         "植物生理学特論",
         "種子科学・技術論",
@@ -48,14 +44,15 @@
       ]
     },
     {
-      "institution": "ワーゲニンゲン大学・研究機関（WUR）",
-      "degree": "修士課程 交換留学・研究員プログラム",
+      "institution": "ワーヘニンゲン大学（WUR）",
+      "degree": "修士課程 交換留学プログラム",
       "field_of_study": "植物科学科 / 植物生理学研究室",
       "start_date": "2025年8月",
       "end_date": "2026年8月",
-      "status": "交換研究員",
-      "location": "オランダ・ワーゲニンゲン",
+      "status": "交換留学生",
+      "location": "オランダ・ワーヘニンゲン",
       "logo": "/wur-logo.svg",
+      "url": "https://www.wur.nl/",
       "courses": [
         "有機農業・アグロエコロジー実践論",
         "持続可能園芸生産特論",
@@ -64,12 +61,12 @@
       ],
       "thesis": {
         "title": "Light on Seeds: The Role of Cryptochrome Photoreceptors in Plant Development and Seed Quality Traits in Arabidopsis thaliana（種子への光：シロイヌナズナにおける植物発生および種子品質特性に関わるクリプトクロム光受容体の役割）",
-        "lab": "ワーゲニンゲン大学 植物生理学研究室（Laboratory of Plant Physiology, WUR）",
+        "lab": "ワーヘニンゲン大学 植物生理学研究室（Laboratory of Plant Physiology, WUR）",
         "period": "2026年2月 – 2026年7月",
         "description": "モデル植物シロイヌナズナを用い、青色光受容体クリプトクロム（cry1/cry2）が発芽活力、種子品質特性、および幼苗形態形成を制御する生理学的メカニズムを定量的に解明。"
       },
       "highlights": [
-        "世界最高峰の農学研究機関であるワーゲニンゲン大学（WUR）植物生理学研究室にて修士論文研究を実施。",
+        "世界最高峰の農学研究機関であるワーヘニンゲン大学（WUR）植物生理学研究室にて修士論文研究を実施。",
         "分光光度分析、形態学的画像解析、定量フェノタイピングを統合した先端生理学実験を展開。"
       ]
     },
@@ -82,6 +79,7 @@
       "gpa": "3.00 / 4.00",
       "location": "日本・東京",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/",
       "highlights": [
         "4年間にわたり「特別交換奨学生（授業料全額免除＋年間給付型奨学金）」に採択。",
         "熱帯園芸学・種子科学研究室にて卒業研究を実施、学術誌共著論文を執筆。"
@@ -96,6 +94,7 @@
       "gpa": "95.7%（学科首席・第1位）",
       "location": "インド・ハリヤーナー州",
       "logo": "/ccshau-logo.png",
+      "url": "https://hau.ac.in/",
       "highlights": [
         "学科第1位（95.7%）の首席栄誉で卒業。",
         "2年連続で大学学長優秀賞・成績優秀者奨学金（University Merit Scholarship）を受賞。"
@@ -165,12 +164,13 @@
   "research_experience": [
     {
       "title": "Rooting for the Future: リンゲホフ有機農場における土壌再生・カバークロップ実証",
-      "organization": "ワーゲニンゲン大学・研究機関（WUR）",
+      "organization": "ワーヘニンゲン大学（WUR）",
       "period": "2025年9月 – 10月",
       "category": "フィールド研究・持続可能性",
       "category_key": "field",
       "location": "オランダ・リンゲホフ有機農場",
       "logo": "/wur-logo.svg",
+      "url": "https://www.wur.nl/",
       "description": "オランダ・リンゲホフ有機農場において、土壌有機物含量の向上、土壌微生物叢の活性化、ならびに干ばつ・豪雨耐性を高める多様なカバークロップ輪作および環境再生型農業技術を実証・検証。定量的生態データを統合し学際シンポジウムにてポスター発表。",
       "skills_used": [
         "カバークロップ生態学",
@@ -187,6 +187,7 @@
       "category_key": "teaching",
       "location": "日本・東京",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/",
       "description": "学部生を対象とした植物生理学・園芸技術の実習指導を全編日本語で担当。実験機器の安全管理、試薬調製、吸光分光分析の指導、および実験設計やデータ完全性のメンター指導を実施。",
       "skills_used": [
         "大学実験指導",
@@ -203,6 +204,7 @@
       "category_key": "fellowship",
       "location": "台湾・台北",
       "logo": "/ntu-logo.svg",
+      "url": "https://www.ntu.edu.tw/",
       "description": "精密農業アーキテクチャ、マルチスペクトルリモートセンシング、作学生育シミュレーションモデル、農業デジタル変革（DX）に関する国際集中共同プログラムを修了。",
       "skills_used": [
         "精密農業",
@@ -219,6 +221,7 @@
       "category_key": "field",
       "location": "日本・沖縄県宮古島",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/",
       "description": "コーヒーやヤムイモをはじめとする亜熱帯作物圃場において、栽培管理および生理モニタリングを実施。機械化管理、土壌水分動態観測、島嶼環境下における収量調査を実施。",
       "skills_used": [
         "コーヒー・ヤムイモ栽培",
@@ -370,6 +373,7 @@
       "location": "インド・ハリヤーナー州",
       "period": "2019年 – 2020年",
       "logo": "/ccshau-logo.png",
+      "url": "https://hau.ac.in/",
       "description": "地域の先駆的農家と直接対話を行い、新しい農学的管理技術、優良種子品種、持続可能な病害虫防除法の普及実演を支援。"
     },
     {

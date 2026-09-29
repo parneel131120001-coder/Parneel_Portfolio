@@ -14,13 +14,8 @@
         "name": "Tokyo University of Agriculture",
         "role": "MSc Candidate (Dept. of International Agricultural Development)",
         "location": "Tokyo, Japan",
-        "logo": "/tokyo-nodai-logo.svg"
-      },
-      {
-        "name": "Wageningen University & Research",
-        "role": "MSc Exchange Researcher (Plant Physiology)",
-        "location": "Wageningen, Netherlands",
-        "logo": "/wur-logo.svg"
+        "logo": "/tokyo-nodai-logo.svg",
+        "url": "https://www.nodai.ac.jp/english/"
       }
     ],
     "linkedin": "https://www.linkedin.com/in/parneel-saharan-268179250/"
@@ -35,6 +30,7 @@
       "status": "Ongoing",
       "location": "Tokyo, Japan",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/english/",
       "courses": [
         "Plant Physiology",
         "Seed Science and Technology",
@@ -56,6 +52,7 @@
       "status": "Exchange Fellowship",
       "location": "Wageningen, Netherlands",
       "logo": "/wur-logo.svg",
+      "url": "https://www.wur.nl/en.htm",
       "courses": [
         "Organic Farming Practices",
         "Sustainable Horticultural Practices",
@@ -82,6 +79,7 @@
       "gpa": "3.00 / 4.00",
       "location": "Tokyo, Japan",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/english/",
       "highlights": [
         "Four-year recipient of Special Exchange Scholarship (full tuition waiver + annual stipend).",
         "Completed thesis work in seed science and tropical horticultural science laboratory."
@@ -96,6 +94,7 @@
       "gpa": "95.7% (First Rank)",
       "location": "Haryana, India",
       "logo": "/ccshau-logo.png",
+      "url": "https://hau.ac.in/",
       "highlights": [
         "Graduated 1st Rank with 95.7% overall distinction.",
         "Awarded University Merit Scholarship for two consecutive academic years."
@@ -171,6 +170,7 @@
       "category_key": "field",
       "location": "Lingehof Organic Farm, Netherlands",
       "logo": "/wur-logo.svg",
+      "url": "https://www.wur.nl/en.htm",
       "description": "Investigated diversified cover-crop rotations and regenerative agricultural strategies at Lingehof Organic Farm to enhance soil organic matter, microbial resilience, and drought/excess-rainfall tolerance. Synthesized quantitative ecological data and presented findings in a multidisciplinary symposium poster.",
       "skills_used": [
         "Cover-crop ecology",
@@ -187,6 +187,7 @@
       "category_key": "teaching",
       "location": "Tokyo, Japan",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/english/",
       "description": "Guided undergraduate students through practical experimental sessions in plant physiology and horticultural techniques. Supervised instrument safety, reagent preparation, analytical spectroscopy, and mentored students on data integrity and experimental design.",
       "skills_used": [
         "Laboratory instruction",
@@ -203,6 +204,7 @@
       "category_key": "fellowship",
       "location": "Taipei, Taiwan",
       "logo": "/ntu-logo.svg",
+      "url": "https://www.ntu.edu.tw/english/",
       "description": "Completed an intensive two-week international cohort program focusing on precision farming architectures, remote multispectral sensing, crop growth simulation modeling, and digital agricultural transformation with global researchers.",
       "skills_used": [
         "Precision agriculture",
@@ -219,6 +221,7 @@
       "category_key": "field",
       "location": "Miyakojima, Okinawa, Japan",
       "logo": "/tokyo-nodai-logo.svg",
+      "url": "https://www.nodai.ac.jp/english/",
       "description": "Executed hands-on crop production and physiological monitoring on subtropical cultivars including coffee and yams. Conducted mechanized field management, soil moisture monitoring, and practical field harvest data collection under island climatic conditions.",
       "skills_used": [
         "Coffee & yam management",
@@ -370,6 +373,7 @@
       "location": "Haryana, India",
       "period": "2019 – 2020",
       "logo": "/ccshau-logo.png",
+      "url": "https://hau.ac.in/",
       "description": "Engaged directly with regional progressive farmers to demonstrate novel agronomic practices, seed varieties, and sustainable crop protection methods."
     },
     {

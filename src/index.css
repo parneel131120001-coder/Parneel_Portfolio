@@ -247,16 +247,42 @@ a {
 .hero-status-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   background: rgba(52, 211, 153, 0.1);
   border: 1px solid rgba(52, 211, 153, 0.25);
-  padding: 0.4rem 1rem;
+  padding: 0.45rem 1.15rem;
   border-radius: var(--radius-full);
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--emerald-400);
   margin-bottom: 1.5rem;
   backdrop-filter: blur(8px);
+  flex-wrap: wrap;
+  line-height: 1.5;
+}
+
+.hero-keywords-list {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.hero-kw-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.hero-kw-dot {
+  opacity: 0.45;
+  color: var(--emerald-400);
+  font-size: 0.8rem;
+  margin: 0 0.15rem;
+}
+
+.hero-kw-text {
+  letter-spacing: 0.01em;
 }
 
 .status-pulse {
@@ -341,6 +367,22 @@ a {
   background: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 3px 10px rgba(52, 211, 153, 0.3);
+}
+
+.inst-logo-link {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.inst-logo-link:hover {
+  background: #ffffff;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 14px rgba(52, 211, 153, 0.45);
+  border-color: rgba(52, 211, 153, 0.6);
+}
+
+.inst-logo-link:active {
+  transform: translateY(0) scale(0.98);
 }
 
 .inst-logo-img {
